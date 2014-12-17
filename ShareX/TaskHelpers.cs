@@ -23,10 +23,12 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
-using ImageEffectsLib;
-using ScreenCaptureLib;
+using ShareX.HelpersLib;
+using ShareX.ImageEffectsLib;
 using ShareX.Properties;
+using ShareX.ScreenCaptureLib;
+using ShareX.UploadersLib;
+using ShareX.UploadersLib.HelperClasses;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -34,8 +36,6 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
-using UploadersLib;
-using UploadersLib.HelperClasses;
 
 namespace ShareX
 {
@@ -451,17 +451,17 @@ namespace ShareX
         {
             TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
             taskSettings.CaptureSettings.ScreenRecordOutput = ScreenRecordOutput.FFmpeg;
-            DoScreenRecording(taskSettings);
+            StartScreenRecording(taskSettings);
         }
 
         public static void DoScreenRecordingGIF()
         {
             TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
             taskSettings.CaptureSettings.ScreenRecordOutput = ScreenRecordOutput.GIF;
-            DoScreenRecording(taskSettings);
+            StartScreenRecording(taskSettings);
         }
 
-        public static void DoScreenRecording(TaskSettings taskSettings = null)
+        public static void StartScreenRecording(TaskSettings taskSettings = null, bool skipRegionSelection = false)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
@@ -473,13 +473,23 @@ namespace ShareX
             }
             else
             {
-                form.StartRecording(taskSettings);
+                form.StartRecording(taskSettings, skipRegionSelection);
             }
         }
 
         public static void OpenAutoCapture()
         {
             AutoCaptureForm.Instance.ShowActivate();
+        }
+
+        public static void StartAutoCapture()
+        {
+            if (!AutoCaptureForm.IsRunning)
+            {
+                AutoCaptureForm form = AutoCaptureForm.Instance;
+                form.Show();
+                form.Execute();
+            }
         }
 
         public static void OpenScreenshotsFolder()
@@ -491,16 +501,6 @@ namespace ShareX
             else
             {
                 Helpers.OpenFolder(Program.ScreenshotsParentFolder);
-            }
-        }
-
-        public static void StartAutoCapture()
-        {
-            if (!AutoCaptureForm.IsRunning)
-            {
-                AutoCaptureForm form = AutoCaptureForm.Instance;
-                form.Show();
-                form.Execute();
             }
         }
 

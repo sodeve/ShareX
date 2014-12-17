@@ -23,9 +23,10 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
-using IndexerLib;
+using ShareX.HelpersLib;
+using ShareX.IndexerLib;
 using ShareX.Properties;
+using ShareX.UploadersLib;
 using System;
 using System.Drawing;
 using System.IO;
@@ -33,7 +34,6 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Windows.Forms;
-using UploadersLib;
 
 namespace ShareX
 {
@@ -48,7 +48,11 @@ namespace ShareX
                 if (File.Exists(filePath))
                 {
                     UploadTask task = UploadTask.CreateFileUploaderTask(filePath, taskSettings);
-                    TaskManager.Start(task);
+
+                    if (task != null)
+                    {
+                        TaskManager.Start(task);
+                    }
                 }
                 else if (Directory.Exists(filePath))
                 {

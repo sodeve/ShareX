@@ -23,15 +23,15 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
-using ScreenCaptureLib;
+using ShareX.HelpersLib;
 using ShareX.Properties;
+using ShareX.ScreenCaptureLib;
+using ShareX.UploadersLib;
 using System;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using UploadersLib;
 
 namespace ShareX
 {
@@ -122,6 +122,8 @@ namespace ShareX
 
             // Advanced
             pgSettings.SelectedObject = Program.Settings;
+
+            tttvMain.MainTabControl = tcSettings;
         }
 
         private void SettingsForm_Shown(object sender, EventArgs e)

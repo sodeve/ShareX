@@ -23,8 +23,9 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using ShareX.Properties;
+using ShareX.UploadersLib;
 using SingleInstanceApplication;
 using System;
 using System.Diagnostics;
@@ -33,13 +34,12 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using UploadersLib;
 
 namespace ShareX
 {
     internal static class Program
     {
-        public static bool IsBeta = false;
+        public static bool IsBeta = true;
 
         public static string Title
         {
@@ -445,7 +445,7 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(customPersonalPath))
             {
-                CustomPersonalPath = Path.GetFullPath(customPersonalPath);
+                CustomPersonalPath = Helpers.GetAbsolutePath(customPersonalPath);
 
                 if (CustomPersonalPath.Equals(PortablePersonalPath, StringComparison.InvariantCultureIgnoreCase))
                 {

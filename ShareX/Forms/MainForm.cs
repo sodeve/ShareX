@@ -23,10 +23,11 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
-using HistoryLib;
-using ScreenCaptureLib;
+using ShareX.HelpersLib;
+using ShareX.HistoryLib;
 using ShareX.Properties;
+using ShareX.ScreenCaptureLib;
+using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -35,7 +36,6 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using UploadersLib;
 
 namespace ShareX
 {
@@ -1498,10 +1498,16 @@ namespace ShareX
                     CaptureScreenshot(CaptureType.LastRegion, safeTaskSettings, false);
                     break;
                 case HotkeyType.ScreenRecorder:
-                    TaskHelpers.DoScreenRecording(safeTaskSettings);
+                    TaskHelpers.StartScreenRecording(safeTaskSettings, false);
+                    break;
+                case HotkeyType.StartScreenRecorder:
+                    TaskHelpers.StartScreenRecording(safeTaskSettings, true);
                     break;
                 case HotkeyType.AutoCapture:
                     TaskHelpers.OpenAutoCapture();
+                    break;
+                case HotkeyType.StartAutoCapture:
+                    TaskHelpers.StartAutoCapture();
                     break;
                 case HotkeyType.OpenScreenshotsFolder:
                     TaskHelpers.OpenScreenshotsFolder();

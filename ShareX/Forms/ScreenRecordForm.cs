@@ -23,9 +23,9 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
-using ScreenCaptureLib;
+using ShareX.HelpersLib;
 using ShareX.Properties;
+using ShareX.ScreenCaptureLib;
 using System.Drawing;
 using System.IO;
 using System.Threading;
@@ -88,7 +88,7 @@ namespace ShareX
             }
         }
 
-        public void StartRecording(TaskSettings taskSettings)
+        public void StartRecording(TaskSettings taskSettings, bool skipRegionSelection = false)
         {
             if (taskSettings.CaptureSettings.RunScreencastCLI)
             {
@@ -117,7 +117,7 @@ namespace ShareX
                     if (MessageBox.Show(string.Format(Resources.ScreenRecordForm_StartRecording_does_not_exist, ffmpegText),
                         "ShareX - " + Resources.ScreenRecordForm_StartRecording_Missing + " ffmpeg.exe", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
-                        if (FFmpegHelper.DownloadFFmpeg(false, DownloaderForm_InstallRequested) == DialogResult.OK)
+                        if (FFmpegDownloader.DownloadFFmpeg(false, DownloaderForm_InstallRequested) == DialogResult.OK)
                         {
                             Program.DefaultTaskSettings.CaptureSettings.FFmpegOptions.CLIPath = taskSettings.TaskSettingsReference.CaptureSettings.FFmpegOptions.CLIPath =
                                taskSettings.CaptureSettings.FFmpegOptions.CLIPath = Path.Combine(Program.ToolsFolder, "ffmpeg.exe");
@@ -138,13 +138,23 @@ namespace ShareX
             }
 
             Rectangle captureRectangle;
-            TaskHelpers.SelectRegion(out captureRectangle, taskSettings);
-            captureRectangle = CaptureHelpers.EvenRectangleSize(captureRectangle);
+
+            if (skipRegionSelection)
+            {
+                captureRectangle = Program.Settings.ScreenRecordRegion;
+            }
+            else
+            {
+                TaskHelpers.SelectRegion(out captureRectangle, taskSettings);
+                captureRectangle = CaptureHelpers.EvenRectangleSize(captureRectangle);
+            }
 
             if (IsRecording || !captureRectangle.IsValid() || screenRecorder != null)
             {
                 return;
             }
+
+            Program.Settings.ScreenRecordRegion = captureRectangle;
 
             IsRecording = true;
             Screenshot.CaptureCursor = taskSettings.CaptureSettings.ShowCursor;
@@ -279,6 +289,7 @@ namespace ShareX
                                 sourceFilePath = path = Path.Combine(taskSettings.CaptureFolder, TaskHelpers.GetFilename(taskSettings, "gif"));
                             }
 
+                            Helpers.CreateDirectoryIfNotExist(sourceFilePath);
                             screenRecorder.SaveAsGIF(sourceFilePath, taskSettings.ImageSettings.ImageGIFQuality);
                         }
 
@@ -330,7 +341,7 @@ namespace ShareX
         private void DownloaderForm_InstallRequested(string filePath)
         {
             string extractPath = Path.Combine(Program.ToolsFolder, "ffmpeg.exe");
-            bool result = FFmpegHelper.ExtractFFmpeg(filePath, extractPath);
+            bool result = FFmpegDownloader.ExtractFFmpeg(filePath, extractPath);
 
             if (result)
             {
