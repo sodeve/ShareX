@@ -117,33 +117,30 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Resim efektleri</value>
+    <value>Share X - Nach dem Hochladen</value>
   </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Ekle</value>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Schließen</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>İptal</value>
+  <data name="btnCopyImage.Text" xml:space="preserve">
+    <value>Bild kopieren</value>
   </data>
-  <data name="btnClear.Text" xml:space="preserve">
-    <value>Temizle</value>
+  <data name="btnCopyLink.Text" xml:space="preserve">
+    <value>Link kopieren</value>
   </data>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>Çoğalt</value>
+  <data name="btnOpenFile.Text" xml:space="preserve">
+    <value>Datei öffnen...</value>
   </data>
-  <data name="btnLoadImage.Text" xml:space="preserve">
-    <value>Resim yükle...</value>
+  <data name="btnOpenFolder.Text" xml:space="preserve">
+    <value>Ordner öffnen...</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>Tamam</value>
+  <data name="btnOpenLink.Text" xml:space="preserve">
+    <value>Link öffnen...</value>
   </data>
-  <data name="btnRefresh.Text" xml:space="preserve">
-    <value>Yenile</value>
+  <data name="chDescription.Text" xml:space="preserve">
+    <value>Beschreibung</value>
   </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>Kaldır</value>
-  </data>
-  <data name="btnSaveImage.Text" xml:space="preserve">
-    <value>Resim kaydet...</value>
+  <data name="chFormat.Text" xml:space="preserve">
+    <value>Format</value>
   </data>
 </root>

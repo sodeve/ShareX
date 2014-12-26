@@ -117,33 +117,24 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Resim efektleri</value>
-  </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Ekle</value>
+    <value>ShareX - Aufgaben nach Aufnahme</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
-    <value>İptal</value>
+    <value>Abbrechen</value>
   </data>
-  <data name="btnClear.Text" xml:space="preserve">
-    <value>Temizle</value>
+  <data name="btnContinue.Text" xml:space="preserve">
+    <value>Weitermachen</value>
   </data>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>Çoğalt</value>
+  <data name="btnCopy.Text" xml:space="preserve">
+    <value>Kopieren</value>
   </data>
-  <data name="btnLoadImage.Text" xml:space="preserve">
-    <value>Resim yükle...</value>
+  <data name="chAfterCapture.Text" xml:space="preserve">
+    <value>Aufgaben</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>Tamam</value>
+  <data name="tpAfterCapture.Text" xml:space="preserve">
+    <value>Nach der Aufnahme</value>
   </data>
-  <data name="btnRefresh.Text" xml:space="preserve">
-    <value>Yenile</value>
-  </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>Kaldır</value>
-  </data>
-  <data name="btnSaveImage.Text" xml:space="preserve">
-    <value>Resim kaydet...</value>
+  <data name="tpBeforeUpload.Text" xml:space="preserve">
+    <value>Vor dem Hochladen</value>
   </data>
 </root>

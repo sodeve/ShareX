@@ -949,6 +949,32 @@ namespace ShareX.UploadersLib
             }
         }
 
+        public void OneDriveAuthRefresh()
+        {
+            try
+            {
+                if (OAuth2Info.CheckOAuth(Config.OneDriveOAuth2Info))
+                {
+                    bool result = new OneDrive(Config.OneDriveOAuth2Info).RefreshAccessToken();
+
+                    if (result)
+                    {
+                        oAuth2OneDrive.Status = OAuthLoginStatus.LoginSuccessful;
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        oAuth2OneDrive.Status = OAuthLoginStatus.LoginFailed;
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         #endregion OneDrive
 
         #region Minus

@@ -117,33 +117,42 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Resim efektleri</value>
+    <value>ShareX - automatisches Aufnehmen</value>
   </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Ekle</value>
+  <data name="btnExecute.Text" xml:space="preserve">
+    <value>Starten</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>İptal</value>
+  <data name="btnRegion.Text" xml:space="preserve">
+    <value>Auswählen der Region</value>
   </data>
-  <data name="btnClear.Text" xml:space="preserve">
-    <value>Temizle</value>
+  <data name="cbAutoMinimize.Text" xml:space="preserve">
+    <value>Automatisch in Taskleisteninfobereich minimieren:</value>
   </data>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>Çoğalt</value>
+  <data name="cbWaitUploads.Text" xml:space="preserve">
+    <value>Warten bis Aufgabe fertig ist</value>
   </data>
-  <data name="btnLoadImage.Text" xml:space="preserve">
-    <value>Resim yükle...</value>
+  <data name="gbRegion.Text" xml:space="preserve">
+    <value>Region:</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>Tamam</value>
+  <data name="lblDuration.Text" xml:space="preserve">
+    <value>Wiederholzeit:</value>
   </data>
-  <data name="btnRefresh.Text" xml:space="preserve">
-    <value>Yenile</value>
+  <data name="lblDurationSeconds.Text" xml:space="preserve">
+    <value>Sekunden</value>
   </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>Kaldır</value>
+  <data name="lblRegion.Text" xml:space="preserve">
+    <value>Region</value>
   </data>
-  <data name="btnSaveImage.Text" xml:space="preserve">
-    <value>Resim kaydet...</value>
+  <data name="niTray.Text" xml:space="preserve">
+    <value>ShareX - automatisches Aufnehmen</value>
+  </data>
+  <data name="rbCustomRegion.Text" xml:space="preserve">
+    <value>Eigene Region</value>
+  </data>
+  <data name="rbFullscreen.Text" xml:space="preserve">
+    <value>Vollbild</value>
+  </data>
+  <data name="ssBar.Text" xml:space="preserve">
+    <value>Status</value>
   </data>
 </root>

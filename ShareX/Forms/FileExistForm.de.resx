@@ -117,33 +117,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Resim efektleri</value>
-  </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Ekle</value>
+    <value>Share X - Wie speichern?</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
-    <value>İptal</value>
+    <value>Nicht speichern</value>
   </data>
-  <data name="btnClear.Text" xml:space="preserve">
-    <value>Temizle</value>
+  <data name="btnNewName.Text" xml:space="preserve">
+    <value>Benutze neuen Namen</value>
   </data>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>Çoğalt</value>
+  <data name="btnOverwrite.Text" xml:space="preserve">
+    <value>Überschreiben</value>
   </data>
-  <data name="btnLoadImage.Text" xml:space="preserve">
-    <value>Resim yükle...</value>
+  <data name="btnUniqueName.Text" xml:space="preserve">
+    <value>Benutze einzigartigen Namen:</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>Tamam</value>
-  </data>
-  <data name="btnRefresh.Text" xml:space="preserve">
-    <value>Yenile</value>
-  </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>Kaldır</value>
-  </data>
-  <data name="btnSaveImage.Text" xml:space="preserve">
-    <value>Resim kaydet...</value>
+  <data name="lblTitle.Text" xml:space="preserve">
+    <value>Es existiert bereits eine Datei mit demselben Namen in der Zielort  
+Wähle neuen Namen oder AKtion aus:</value>
   </data>
 </root>
